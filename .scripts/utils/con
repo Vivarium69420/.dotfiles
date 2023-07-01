@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+
+# Create a help function
+# This function will be called for invalid arguments 
+help() {
+  echo "Usage: con [nv|hypr|zsh|ut|help]"
+  echo " ------------------------------- "
+  echo "    nv: nvim dir"
+  echo "    hypr: hyprland.conf"
+  echo "    zsh: .zshrc"
+  echo "    ut: utils dir"
+}
+
+# Check if nvim is installed
+if ! command -v nvim &> /dev/null
+then 
+  echo "nvim is not installed"
+  exit 1
+fi
+
+# Go to the directory and open nvim
+case $1 in
+  "help")
+    help
+    exit 1
+    ;;
+
+  "nv")
+    cd ~/.config/nvim/
+    nvim
+    ;;
+
+  "hypr")
+    cd ~/.config/hypr/
+    nvim
+    ;;
+
+  "zsh")
+    nvim ~/.zshrc
+    ;;
+
+  "ut")
+    cd ~/.scripts/utils/
+    nvim
+    ;;
+
+  *)
+    # exit if the directory doesn't exist
+    echo "No such directory" 
+    exit 1
+    ;;
+esac
+
