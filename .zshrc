@@ -111,7 +111,7 @@ alias da='dotfiles add'
 alias ds='dotfiles status'
 alias dau='dotfiles add -u'
 alias dcm='dotfiles commit -m'
-alias dp="eval 'ssh-agent -s' ssh-add ~/.ssh/vvr dotfiles push"
+alias dp=' dotfiles push'
 alias dl='dotfiles pull'
 alias dfd='dotfiles diff'
 
