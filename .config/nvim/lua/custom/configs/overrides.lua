@@ -40,6 +40,7 @@ M.mason = {
     "deno",
     "prettier",
     "xmlformatter",
+    "djlint",
 
     -- c/cpp stuff
     "clangd",
