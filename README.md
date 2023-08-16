@@ -43,6 +43,13 @@ yay -S libreoffice-fresh obsidian obs-studio edge onedrive  foxitreader microsof
 yay -S tor-browser tor nyx torsocks wget gnu-netcat socat torbrowser-launcher
 ```
 
+- Color-picker and Screenshot
+
+```
+yay -S hyprpicker imagemagick
+mkdir ~/Pictures/Screenshots/
+```
+
 # GTK theme, icon, cursor
 
 - GTK Theme :: Tokyonight-Dark-BL-LB:
