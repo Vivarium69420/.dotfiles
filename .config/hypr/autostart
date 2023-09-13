@@ -56,6 +56,7 @@ hyprctl setcursor Sweet-cursors 24
 wl-paste --watch cliphist store &
 notify-send -a aurora "hello $(whoami)" &
 libinput-gestures-setup start &
+thunderbird &
 
 # sleep 1
 # mpd-mpris &

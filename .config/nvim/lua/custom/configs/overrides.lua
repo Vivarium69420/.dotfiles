@@ -10,7 +10,7 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
-    "markdown",
+    "markdon",
     "markdown_inline",
     "json",
     "python",
@@ -55,6 +55,9 @@ M.mason = {
 
     -- java stuff
     "jdtls",
+
+    -- database stuff
+    "sqlls",
   },
 }
 

@@ -8,7 +8,7 @@ help() {
   echo "    nv: nvim dir"
   echo "    hypr: hyprland.conf"
   echo "    zsh: .zshrc"
-  echo "    ut: utils dir"
+  echo "    sut: scripts/utils dir"
 }
 
 # Check if nvim is installed
@@ -39,7 +39,7 @@ case $1 in
     nvim ~/.zshrc
     ;;
 
-  "ut")
+  "sut")
     cd ~/.scripts/utils/
     nvim
     ;;

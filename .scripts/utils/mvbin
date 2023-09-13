@@ -81,5 +81,4 @@ else
     sudo chmod +x $input
     echo "Copy the $input to $BIN_PATH"
     sudo cp $input $BIN_PATH
-    sudo mv $BIN_PATH$input $BIN_PATH$input
 fi
