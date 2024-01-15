@@ -28,7 +28,7 @@ local sources = {
 
   -- webdev stuff
   b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "php" } }, -- so prettier works only on these filetypes
   -- b.formatting.xmlformat,
 
   -- Lua
@@ -41,6 +41,9 @@ local sources = {
   -- b.diagnostics.mypy, -- should be uncommented if using type
   b.diagnostics.ruff,
   b.formatting.black,
+
+  -- php
+  b.formatting.phpcbf,
 }
 
 null_ls.setup {

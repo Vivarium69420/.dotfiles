@@ -3,8 +3,16 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
--- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "pyright", "sqlls" }
+local servers = {
+  "html",
+  "cssls",
+  "tsserver",
+  "clangd",
+  "pyright",
+  "sqlls",
+  "psalm",
+  "docker_compose_language_service",
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -30,6 +38,7 @@ lspconfig.emmet_ls.setup {
     "pug",
     "typescriptreact",
     "vue",
+    "vite",
   },
   init_options = {
     html = {

@@ -1,5 +1,4 @@
 ---@type MappingsTable
--- n, v, i, t = mode names
 local M = {}
 
 M.general = {
@@ -31,5 +30,7 @@ M.dap = {
     },
   },
 }
+
+-- more keybinds!
 
 return M

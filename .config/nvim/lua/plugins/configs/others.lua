@@ -25,9 +25,6 @@ M.blankline = {
 M.luasnip = function(opts)
   require("luasnip").config.set_config(opts)
 
-  -- load all default snippets for javascript and javascriptreact
-  require("luasnip").filetype_extend("javascript", { "javascriptreact" })
-
   -- vscode format
   require("luasnip.loaders.from_vscode").lazy_load()
   require("luasnip.loaders.from_vscode").lazy_load { paths = vim.g.vscode_snippets_path or "" }
@@ -54,12 +51,12 @@ end
 
 M.gitsigns = {
   signs = {
-    add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
-    change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },
-    delete = { hl = "DiffDelete", text = "󰍵", numhl = "GitSignsDeleteNr" },
-    topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
-    changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
-    untracked = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+    add = { text = "│" },
+    change = { text = "│" },
+    delete = { text = "󰍵" },
+    topdelete = { text = "‾" },
+    changedelete = { text = "~" },
+    untracked = { text = "│" },
   },
   on_attach = function(bufnr)
     utils.load_mappings("gitsigns", { buffer = bufnr })
