@@ -1,0 +1,43 @@
+#!/usr/bin/bash
+
+# This script help delete bin files to usr/local/bin
+# Usage: delbin <bin_file_name>
+
+help() {
+	echo "Usage: delbin <bin_file_name>"
+	echo " ------------------------------- "
+	echo "    bin_file_name: in ~/.scripts/utils/"
+	exit 1
+}
+
+# Define
+BIN_PATH_DEFAULT=/usr/local/bin
+BIN_PATH=/usr/local/bin/
+input=$1
+
+# Check if the input is empty
+if [[ -z $input ]]; then
+	echo "Please input the bin file name"
+	help
+	exit 1
+fi
+
+# Check if the input exist
+if [[ ! -f $BIN_PATH$input ]]; then
+	echo "The bin file $input does not exist"
+	exit 1
+fi
+
+# Function to get user confirmation
+confirm() {
+	read -r -p "Are you sure? [y/N] " response
+	if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+		return 0
+	else
+		echo "Aborted."
+		return 1
+	fi
+}
+
+# Delete the bin file
+confirm && sudo rm -rf $BIN_PATH$input

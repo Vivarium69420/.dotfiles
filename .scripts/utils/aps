@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+# Arduino port path set
+
+ls -l /dev/ttyUSB0
+sudo setfacl -m u:vivarium:rwx /dev/ttyUSB0

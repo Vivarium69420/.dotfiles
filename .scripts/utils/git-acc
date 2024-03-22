@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# silent prompt
+read -p "GIT profile: " profile
+
+# switch
+case $profile in
+vivarium)
+	git config user.email "vivarium69420@gmail.com"
+	git config user.name "vivarium69420"
+	git config user.signingKey "id_rsa_personal.pub"
+	;;
+school)
+	git config user.email "dangmh.bi12-076@st.usth.edu.vn"
+	git config user.name "Incomprehensibilitative"
+	git config user.signingKey "id_rsa_school.pub"
+	;;
+# default case: raise error
+*)
+	echo >&2 "ERR: Unknown profile: $profile"
+	exit 1
+	;;
+esac

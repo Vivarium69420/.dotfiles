@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+
+# This script is used to check if the 2 binaries are the same
+
+help() {
+    echo "Usage: ckbin <file1> <file2>"
+    echo " ------------------------------- "
+    echo "    file1: in ~/.scripts/utils/"
+    echo "    file2: in /usr/local/bin/"
+    exit 1 
+}
+
+file1=$1
+file2=$2
+
+# check if the arguments are empty
+if [ -z $file1 ] || [ -z $file2 ]
+then
+    help
+fi
+
+# check if the files exist
+if [ ! -f ~/.scripts/utils/$file1 ] || [ ! -f /usr/local/bin/$file2 ]
+then
+    echo "File not found"
+    exit 1
+fi
+
+# check if the files are the same
+if cmp -s ~/.scripts/utils/$file1 /usr/local/bin/$file2
+then
+    echo "Files are the same"
+else
+    echo "Files are different"
+fi
