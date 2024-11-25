@@ -1,0 +1,2 @@
+alias his='history'
+alias rcobs='rclone sync -v ~/obsidian remote-arch:obsidian-test/'
